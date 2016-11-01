@@ -104,12 +104,13 @@ td {
 .pause {
     height: 100px;
     font-size: 3em;
-    padding: 0 25px 0 25px;
+    padding: 0 30px 0 30px;
     margin-right: 30px;
 }
 
 .playAgain button {
     height: 100px;
     width: 100%;
+    padding: 0 30px 0 30px;
     font-size: 3em;
 }

@@ -32,6 +32,7 @@ $(document).ready(function(){
         var row2 = $('.row2 .cell').text().split('');
         var row3 = $('.row3 .cell').text().split('');
         var board = [row1, row2, row3];
+        return board;
     }
 
     function existsWin(board){
@@ -39,7 +40,7 @@ $(document).ready(function(){
             ++player1win;
             yesWin();
         } else if(tictactoe(board) === 'X'){
-            ++player2win;
+            ++player1loss;
             yesWin();
         } else if (counter == 9){
             ++draw;
@@ -50,10 +51,10 @@ $(document).ready(function(){
     function yesWin(){
         $('.turn').text("PLAYER 1 - IT'S YOUR MOVE!");
         $('.turn').attr('class', 'turn text-info');
-        if (player1win > player2win) {
+        if (player1win > player1loss) {
             $('.message').text('Player 1 is king');
             $('.message').attr('class', 'message text-info');
-        } else if (player2win > player1win) {
+        } else if (player1loss > player1win) {
             $('.message').text('Player 2 is king');
             $('.message').attr('class', 'message text-success');
         }
@@ -65,12 +66,11 @@ $(document).ready(function(){
         $('.player2 .drawcount').text(draw);
         $('.cell').text('');
         $('.cell').attr('class', 'btn btn-default cell');
-        player = 'one';
-        counter = 0;
     }
 
     function playAgain() {
-        
+        player = 'one';
+        counter = 0;
     }
 
     function tictactoe(grid) {
