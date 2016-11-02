@@ -65,11 +65,32 @@
                 <span class="message">Get Playing</span>
                 <div class="buttons">
                     <button class="btn btn-danger pause" type="button" name="button"><i class="fa fa-pause"></i></button>
-                    <a href="index.html" class="playAgain"><button class="btn btn-warning" type="button" name="button">Start Over</button></a>
+                    <a href="index.html" class="startOver"><button class="btn btn-warning" type="button" name="button">Start Over</button></a>
+                </div>
+            </div>
+        </div>
+        <div id="winmodal" class="modal" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div id="modalback" class="alert">
+                    <div class="">
+                        <p class="winner"></p>
+                        <button type="button" class="btn btn-warning playagain">Play Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pausemodal" class="modal fade" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="textpause">GAME PAUSED</p>
+                        <button type="button" class="btn btn-warning resume"><i class="fa fa-play"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
+
     <!-- jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

@@ -27,6 +27,15 @@ $(document).ready(function(){
         existsWin(makeBoard());
     });
 
+    $('.pause').click(function(){
+
+    });
+
+    $('.unpause').click(function(){
+
+    });
+
+
     function makeBoard() {
         var row1 = $('.row1 .cell').text().split('');
         var row2 = $('.row2 .cell').text().split('');
@@ -37,18 +46,27 @@ $(document).ready(function(){
 
     function existsWin(board){
         if(tictactoe(board) === 'O'){
+            $('.winner').text('PLAYER 1 WINSSSSS');
+            $('.winner').addClass('text-info');
+            $('#modalback').addClass('alert-info');
             ++player1win;
             yesWin();
         } else if(tictactoe(board) === 'X'){
+            $('.winner').text('PLAYER 2 WINSSSSS');
+            $('.winner').addClass('text-success');
+            $('#modalback').addClass('alert-success');
             ++player1loss;
             yesWin();
         } else if (counter == 9){
+            $('.winner').text('NO ONE WINSSSSS');
+            $('#modalback').addClass('alert-danger');
             ++draw;
             yesWin();
         }
     }
 
     function yesWin(){
+        $('#winmodal').modal('show');
         $('.turn').text("PLAYER 1 - IT'S YOUR MOVE!");
         $('.turn').attr('class', 'turn text-info');
         if (player1win > player1loss) {
@@ -64,14 +82,25 @@ $(document).ready(function(){
         $('.player2 .wincount').text(player1loss);
         $('.player2 .losscount').text(player1win);
         $('.player2 .drawcount').text(draw);
-        $('.cell').text('');
-        $('.cell').attr('class', 'btn btn-default cell');
+
     }
 
-    function playAgain() {
+    $('.playagain').click(function(){
         player = 'one';
         counter = 0;
-    }
+        $('.cell').text('');
+        $('.cell').attr('class', 'btn btn-default cell');
+        $('#modalback').attr('class', 'alert');
+        $('#winmodal').modal('hide');
+    });
+
+    $('.pause').click(function(){
+        $('#pausemodal').modal('show');
+    });
+
+    $('.resume').click(function(){
+        $('#pausemodal').modal('hide');
+    });
 
     function tictactoe(grid) {
         for(i=0; i<3; i++) {
@@ -109,6 +138,4 @@ $(document).ready(function(){
         }
         return null;
     }
-
-
 });

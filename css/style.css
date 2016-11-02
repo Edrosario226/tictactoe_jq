@@ -108,9 +108,40 @@ td {
     margin-right: 30px;
 }
 
-.playAgain button {
+.startOver button {
     height: 100px;
     width: 100%;
     padding: 0 30px 0 30px;
     font-size: 3em;
+}
+
+#winmodal {
+    text-align: center;
+}
+
+.winner {
+    color: white;
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.playagain {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+#pausemodal {
+    text-align: center;
+}
+
+.textpause {
+    font-size: 3em;
+}
+
+.resume {
+    height: 100px;
+    font-size: 3em;
+    padding: 0 30px 0 30px;
 }
